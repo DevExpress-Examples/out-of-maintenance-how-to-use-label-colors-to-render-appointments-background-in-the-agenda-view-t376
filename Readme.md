@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [AgendaViewHelper.cs](./CS/WindowsFormsApplication1/AgendaViewHelper.cs) (VB: [AgendaViewHelper.vb](./VB/WindowsFormsApplication1/AgendaViewHelper.vb))
+<!-- default file list end -->
 # How to use label colors to render appointments' background in the Agenda view
 
 
