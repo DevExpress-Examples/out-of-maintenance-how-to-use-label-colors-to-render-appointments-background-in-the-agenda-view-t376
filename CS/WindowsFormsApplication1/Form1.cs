@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1 {
         private void Form1_Load(object sender, EventArgs e) {
             InitResources();
             InitAppointments();
-            schedulerControl1.Start = DateTime.Now.AddDays(-5);
+            schedulerControl1.GoToToday();
             schedulerControl1.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Resource;
         }
 
@@ -84,7 +84,6 @@ namespace WindowsFormsApplication1 {
             apt.Subject = subject;
             apt.OwnerId = resourceId;
             Random rnd = RandomInstance;
-            int rangeInMinutes = 60 * 24;
             apt.StartTime = DateTime.Today.AddHours(sHour);
             apt.EndTime = apt.StartTime.AddHours(1);
             apt.Status = status;

@@ -36,10 +36,11 @@ Namespace WindowsFormsApplication1
         End Sub
 
         Private Sub scheduler_AppointmentViewInfoCustomizing(ByVal sender As Object, ByVal e As AppointmentViewInfoCustomizingEventArgs)
+            Dim scheduler As SchedulerControl = CType(sender, SchedulerControl)
             Dim agendaViewInfo As DevExpress.XtraScheduler.Drawing.AgendaAppointmentViewInfo = TryCast(e.ViewInfo, DevExpress.XtraScheduler.Drawing.AgendaAppointmentViewInfo)
             If agendaViewInfo IsNot Nothing Then
-                agendaViewInfo.Appearance.BackColor = agendaViewInfo.LabelColor
+                agendaViewInfo.Appearance.BackColor = scheduler.DataStorage.GetLabelColor(agendaViewInfo.Appointment.LabelKey)
             End If
         End Sub
-	End Module
+    End Module
 End Namespace

@@ -35,9 +35,10 @@ namespace WindowsFormsApplication1 {
         }
 
         static void scheduler_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e) {
+            SchedulerControl scheduler = sender as SchedulerControl;
             DevExpress.XtraScheduler.Drawing.AgendaAppointmentViewInfo agendaViewInfo = e.ViewInfo as DevExpress.XtraScheduler.Drawing.AgendaAppointmentViewInfo;
             if(agendaViewInfo != null) {
-                agendaViewInfo.Appearance.BackColor = agendaViewInfo.LabelColor;    
+                agendaViewInfo.Appearance.BackColor = scheduler.DataStorage.GetLabelColor(agendaViewInfo.Appointment.LabelKey);
             }            
         }
     }

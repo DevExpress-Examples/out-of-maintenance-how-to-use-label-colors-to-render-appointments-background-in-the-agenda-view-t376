@@ -26,8 +26,8 @@ Namespace WindowsFormsApplication1
 		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 			InitResources()
 			InitAppointments()
-			schedulerControl1.Start = DateTime.Now.AddDays(-5)
-			schedulerControl1.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Resource
+            schedulerControl1.GoToToday()
+            schedulerControl1.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Resource
 		End Sub
 
 		Private Sub InitResources()
@@ -86,9 +86,8 @@ Namespace WindowsFormsApplication1
 			apt.Subject = subject
 			apt.OwnerId = resourceId
 			Dim rnd As Random = RandomInstance
-			Dim rangeInMinutes As Integer = 60 * 24
-			apt.StartTime = DateTime.Today.AddHours(sHour)
-			apt.EndTime = apt.StartTime.AddHours(1)
+            apt.StartTime = DateTime.Today.AddHours(sHour)
+            apt.EndTime = apt.StartTime.AddHours(1)
 			apt.Status = status
 			apt.Label = label
 			Return apt
